@@ -11,7 +11,6 @@ export default function Signup() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
   } = useForm({
     mode: "onBlur",
   });
@@ -124,8 +123,8 @@ export default function Signup() {
               placeholder="Confirm Password"
               {...register("confirmPassword", {
                 required: "Please confirm password",
-                validate: (value) =>
-                  value === watch("password") || "Passwords do not match",
+                validate: (value, formValues) =>
+                  value === formValues.password || "Passwords do not match",
               })}
             />
             <Field.ErrorText>{errors.confirmPassword?.message}</Field.ErrorText>

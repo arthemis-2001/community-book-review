@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { render } from "@testing-library/react";
 import { Provider } from "@/components/ui/provider";
 import { ColorModeProvider } from "@/components/ui/color-mode";
